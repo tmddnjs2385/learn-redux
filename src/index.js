@@ -3,11 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import "./exercise";
+import {Provider} from "react-redux";
+import {createStore} from "redux";
+import rootReducer from "./module"// 자동으로 index.js를 불러온다. 
+
+const store=createStore(rootReducer);
+console.log(store.getState());
 
 ReactDOM.render(
   <React.StrictMode>
+    <Provider>
     <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
