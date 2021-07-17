@@ -5,14 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from "react-redux";
 import {createStore} from "redux";
-import rootReducer from "./module"// 자동으로 index.js를 불러온다. 
+import rootReducer from "./modules"// 자동으로 index.js를 불러온다. 
+import{composeWithDevTools} from "redux-devtools-extension";
 
-const store=createStore(rootReducer);
+const store=createStore(rootReducer, composeWithDevTools());
+
 console.log(store.getState());
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider>
+    <Provider store={store}>
     <App />
     </Provider>
   </React.StrictMode>,
