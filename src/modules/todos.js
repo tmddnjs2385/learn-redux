@@ -25,7 +25,7 @@ export default function todos(state=initialState, action){
 
     switch(action.type){
         case ADD_TODO:
-            return state.concat(action.type);
+            return state.concat(action.todo);
         
         case  TOGGLE_TODO:
             return state.map(
