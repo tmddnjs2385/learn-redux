@@ -8,11 +8,11 @@ const CounterContainer = () => {
     const {number, diff}=useSelector(state=>({
         number:state.counter.number,
         diff: state.counter.diff
-    }), shallowEqual);
+    }), shallowEqual);//바뀐 부분에 대해서 얕게 비교함
 
     //const number=useSelector(state=>state.counter.number);// state 최적화
    // const diff=useSelector(state=>state.counter.diff);// state 최적화
-   
+
     const dispatch=useDispatch();
 
     const onIncrease=()=>dispatch(increase());

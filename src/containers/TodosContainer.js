@@ -11,9 +11,7 @@ const TodosContainer = () => {
     const onToggle=useCallback(id=>dispatch(toggleTodo(id)),[dispatch]);
 
     return (
-        
             <Todos todos={todos} onCreate={onCreate} onToggle={onToggle}/>
-      
     );
 };
 
